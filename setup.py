@@ -1,9 +1,9 @@
 from setuptools import find_packages, setup
 from typing import List
 
-HYPEN_E_DOT = '-e .'
-
+## get list of requiremets from the file.   
 def get_requirements(file_path:str) -> List[str]:
+    HYPEN_E_DOT = '-e .'
     requirements=[]
     with open(file_path) as file_object:
         requirements=file_object.readlines()
