@@ -31,7 +31,7 @@ class DataTransformation:
 
 
             target_column_name = 'Exited'
-            columns_to_drop = ['RowNumber', 'CustomerId', 'Surname', 'Exited']
+            columns_to_drop = ['Exited']
 
             ## Train data
             input_feature_train = train_data.drop(columns=columns_to_drop, axis=1)

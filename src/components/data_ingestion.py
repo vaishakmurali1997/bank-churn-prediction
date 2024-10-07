@@ -24,6 +24,7 @@ class DataIngestion:
         
         try:
             data = pd.read_csv('notebook/data/churn.csv')
+            data.drop(columns=['RowNumber', 'CustomerId', 'Surname'], axis=1, inplace=True)
             logging.info('Read the dataset')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
