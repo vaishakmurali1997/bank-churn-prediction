@@ -22,12 +22,7 @@ class PredictPipeline:
 
             prediction = model.predict(data_scaled)
 
-            if prediction[0] == 0.0: 
-                return 'Customer is likely to retain'
-            elif prediction[0] == 1:
-                return 'Customer is likely to churn'
-            else:
-                return '[fatal: 100] Something is wrong'
+            return prediction
             
         
         except Exception as e: 

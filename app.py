@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, jsonify
 import numpy as np
 import pandas as pd
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
+
 
 application = Flask(__name__)
 app = application
@@ -30,7 +31,7 @@ def prediction():
     
     predict_pipeline = PredictPipeline()
     result = predict_pipeline.predict(prediction_data)
-    return result
+    return jsonify({'churn': int(result[0])})
 
 if __name__ == "__main__" :
     app.run(host="0.0.0.0", debug=True)
